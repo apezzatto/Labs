@@ -23,7 +23,7 @@ namespace Events.IO.Domain.Events
         public Guid? OrganizerId { get; private set; }
         public Guid AddressId { get; private set; }
 
-        //Entity Framework navigation properties 
+        //Entity Framework navigation properties
         public virtual Category Category { get; private set; }
         public virtual Address Address { get; private set; }
         public virtual Organizer Organizer { get; private set; }
