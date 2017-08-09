@@ -18,8 +18,8 @@ namespace Events.IO.Infra.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.AddConfiguration(new EventMapping());
-            modelBuilder.AddConfiguration(new AddressMapping());
             modelBuilder.AddConfiguration(new OrganizerMapping());
+            modelBuilder.AddConfiguration(new AddressMapping());
             modelBuilder.AddConfiguration(new CategoryMapping());
 
             base.OnModelCreating(modelBuilder); 

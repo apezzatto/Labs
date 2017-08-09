@@ -172,8 +172,8 @@ namespace Events.IO.Domain.Events
                     CategoryId = categoryId
                 };
 
-                if (organizerId!=null)
-                    @event.Organizer = new Organizer(organizerId.Value);
+                if (organizerId.HasValue)
+                    @event.OrganizerId = organizerId.Value;
 
                 if (online)
                     @event.Address = null;

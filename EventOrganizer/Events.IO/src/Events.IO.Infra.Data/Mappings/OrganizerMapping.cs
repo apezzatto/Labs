@@ -14,16 +14,15 @@ namespace Events.IO.Infra.Data.Mappings
         public override void Map(EntityTypeBuilder<Organizer> builder)
         {
             builder.Property(e => e.Name)
-                .HasColumnType("varchar(150")
+                .HasColumnType("varchar(150)")
                 .IsRequired();
 
             builder.Property(e => e.Email)
-                .HasColumnType("varchar(100")
+                .HasColumnType("varchar(100)")
                 .IsRequired();
 
             builder.Property(e => e.SIN)
                 .HasColumnType("varchar(9)")
-                .HasMaxLength(9)
                 .IsRequired();
 
             builder.Ignore(e => e.ValidationResult);
