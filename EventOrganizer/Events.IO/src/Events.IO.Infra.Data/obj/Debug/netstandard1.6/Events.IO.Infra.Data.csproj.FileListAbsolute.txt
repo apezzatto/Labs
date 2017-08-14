@@ -1,0 +1,12 @@
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\bin\Debug\netstandard1.6\Events.IO.Infra.Data.deps.json
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\obj\Debug\netstandard1.6\Events.IO.Infra.Data.csprojResolveAssemblyReference.cache
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\obj\Debug\netstandard1.6\Events.IO.Infra.Data.AssemblyInfo.cs
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\bin\Debug\netstandard1.6\Events.IO.Infra.Data.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\bin\Debug\netstandard1.6\Events.IO.Infra.Data.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\bin\Debug\netstandard1.6\Events.IO.Domain.Core.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\bin\Debug\netstandard1.6\Events.IO.Domain.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\bin\Debug\netstandard1.6\Events.IO.Domain.Core.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\bin\Debug\netstandard1.6\Events.IO.Domain.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\obj\Debug\netstandard1.6\Events.IO.Infra.Data.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\obj\Debug\netstandard1.6\Events.IO.Infra.Data.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.Data\bin\Debug\netstandard1.6\appsettings.json

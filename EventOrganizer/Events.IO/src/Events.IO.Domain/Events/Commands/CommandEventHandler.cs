@@ -30,6 +30,8 @@ namespace Events.IO.Domain.Events.Commands
 
         public void Handle(EventRegistrationCommand message)
         {
+            var address = new Address(message.Address.Id, message.Address.Address1, message.Address.Address2, message.Address.ZipCode, message.Address.City, message.Address.Province, message.Id);
+
             var @event = Event.EventFactory.NewFullEvent(
                 message.Id, 
                 message.Name,
@@ -40,8 +42,8 @@ namespace Events.IO.Domain.Events.Commands
                 message.Online,
                 message.CompanyName,
                 message.IdOrganizer,
-                message.Address,
-                message.Category.Id);
+                address,
+                message.IdCategory);
 
             if (!IsValidEvent(@event)) return;
 
@@ -78,7 +80,7 @@ namespace Events.IO.Domain.Events.Commands
 
             var currentEvent = _eventRepository.GetById(message.Id);
 
-            var @event = Event.EventFactory.NewFullEvent(message.Id, message.Name, message.StartDate, message.EndDate, message.IsFree, message.Price, message.Online, message.CompanyName, message.IdOrganizer, currentEvent.Address, message.Category.Id);
+            var @event = Event.EventFactory.NewFullEvent(message.Id, message.Name, message.StartDate, message.EndDate, message.IsFree, message.Price, message.Online, message.CompanyName, message.IdOrganizer, currentEvent.Address, message.IdCategory);
 
             if (!IsValidEvent(@event)) return;
 

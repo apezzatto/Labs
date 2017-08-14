@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.IO.Domain.Core", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.IO.Infra.Data", "src\Events.IO.Infra.Data\Events.IO.Infra.Data.csproj", "{E85393FC-83D0-418E-A393-B62CF496E5D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events.IO.Site", "src\Events.IO.Site\Events.IO.Site.csproj", "{00E6DFE8-17DB-4BDA-BAB6-7C7EB2E1014C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.IO.Site", "src\Events.IO.Site\Events.IO.Site.csproj", "{00E6DFE8-17DB-4BDA-BAB6-7C7EB2E1014C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Events.IO.Application", "src\Events.IO.Application\Events.IO.Application.csproj", "{CDDF35A1-2823-4D2D-8941-B3AD0FA01D4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{00E6DFE8-17DB-4BDA-BAB6-7C7EB2E1014C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00E6DFE8-17DB-4BDA-BAB6-7C7EB2E1014C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00E6DFE8-17DB-4BDA-BAB6-7C7EB2E1014C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDDF35A1-2823-4D2D-8941-B3AD0FA01D4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDDF35A1-2823-4D2D-8941-B3AD0FA01D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDDF35A1-2823-4D2D-8941-B3AD0FA01D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDDF35A1-2823-4D2D-8941-B3AD0FA01D4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +64,6 @@ Global
 		{B335632E-6EAD-4E50-AB08-5F047EA768F8} = {4C81850A-D3F3-4975-A4D0-ADD55904D232}
 		{E85393FC-83D0-418E-A393-B62CF496E5D7} = {C101FCEA-35D8-43F9-B3DF-3078D25FEE12}
 		{00E6DFE8-17DB-4BDA-BAB6-7C7EB2E1014C} = {61D0958A-3CBC-4207-A795-9CCD72DDFBE0}
+		{CDDF35A1-2823-4D2D-8941-B3AD0FA01D4F} = {F11D7C53-9A51-4F94-B9D3-439EE517C4B3}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,13 @@
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\bin\Debug\netstandard1.6\Events.IO.Application.deps.json
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\bin\Debug\netstandard1.6\Events.IO.Application.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\obj\Debug\netstandard1.6\Events.IO.Application.csprojResolveAssemblyReference.cache
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\obj\Debug\netstandard1.6\Events.IO.Application.AssemblyInfo.cs
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\bin\Debug\netstandard1.6\Events.IO.Domain.Core.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\bin\Debug\netstandard1.6\Events.IO.Domain.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\bin\Debug\netstandard1.6\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\bin\Debug\netstandard1.6\Events.IO.Domain.Core.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\bin\Debug\netstandard1.6\Events.IO.Domain.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\bin\Debug\netstandard1.6\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\bin\Debug\netstandard1.6\Events.IO.Application.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\obj\Debug\netstandard1.6\Events.IO.Application.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Application\obj\Debug\netstandard1.6\Events.IO.Application.pdb

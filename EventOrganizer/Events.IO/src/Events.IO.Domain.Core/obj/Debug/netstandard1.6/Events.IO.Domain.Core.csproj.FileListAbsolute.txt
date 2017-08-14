@@ -1,0 +1,6 @@
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain.Core\bin\Debug\netstandard1.6\Events.IO.Domain.Core.deps.json
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain.Core\bin\Debug\netstandard1.6\Events.IO.Domain.Core.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain.Core\bin\Debug\netstandard1.6\Events.IO.Domain.Core.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain.Core\obj\Debug\netstandard1.6\Events.IO.Domain.Core.AssemblyInfo.cs
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain.Core\obj\Debug\netstandard1.6\Events.IO.Domain.Core.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain.Core\obj\Debug\netstandard1.6\Events.IO.Domain.Core.pdb

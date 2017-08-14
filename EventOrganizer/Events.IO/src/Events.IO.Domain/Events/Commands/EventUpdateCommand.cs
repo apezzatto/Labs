@@ -16,7 +16,9 @@ namespace Events.IO.Domain.Events.Commands
             bool isFree,
             decimal price,
             bool online,
-            string companyName)
+            string companyName,
+            Guid idOrganizer,
+            Guid idCategory)
         {
             Id = id;
             Name = name;
@@ -28,6 +30,8 @@ namespace Events.IO.Domain.Events.Commands
             Price = price;
             Online = online;
             CompanyName = companyName;
+            IdOrganizer = idOrganizer;
+            IdCategory = idCategory;
         }
     }
 }
