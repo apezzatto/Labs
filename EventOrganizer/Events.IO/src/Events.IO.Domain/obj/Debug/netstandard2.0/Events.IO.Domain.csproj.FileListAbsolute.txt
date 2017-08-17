@@ -1,0 +1,11 @@
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\bin\Debug\netstandard2.0\Events.IO.Domain.deps.json
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\bin\Debug\netstandard2.0\Events.IO.Domain.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\bin\Debug\netstandard2.0\Events.IO.Domain.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\bin\Debug\netstandard2.0\Events.IO.Domain.Core.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\bin\Debug\netstandard2.0\Events.IO.Domain.Core.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\obj\Debug\netstandard2.0\Events.IO.Domain.csprojResolveAssemblyReference.cache
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\obj\Debug\netstandard2.0\Events.IO.Domain.csproj.CoreCompileInputs.cache
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\obj\Debug\netstandard2.0\Events.IO.Domain.AssemblyInfoInputs.cache
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\obj\Debug\netstandard2.0\Events.IO.Domain.AssemblyInfo.cs
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\obj\Debug\netstandard2.0\Events.IO.Domain.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Domain\obj\Debug\netstandard2.0\Events.IO.Domain.pdb
