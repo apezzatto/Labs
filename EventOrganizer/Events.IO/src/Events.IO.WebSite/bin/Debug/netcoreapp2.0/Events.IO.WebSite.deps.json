@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "cd945696cff90a9745d51031f9ca805e22e8725c"
+    "signature": "f5cced534698791b520dc267d8a38d6ec06f76c9"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,11 @@
     ".NETCoreApp,Version=v2.0": {
       "Events.IO.WebSite/1.0.0": {
         "dependencies": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "3.0.1",
+          "Events.IO.Application": "1.0.0",
+          "Events.IO.Infra.CrossCutting.Bus": "1.0.0",
+          "Events.IO.Infra.CrossCutting.IoC": "1.0.0",
+          "Events.IO.Infra.Data": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
@@ -33,6 +38,58 @@
         },
         "compile": {
           "Events.IO.WebSite.dll": {}
+        }
+      },
+      "AutoMapper/6.1.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.4.0",
+          "System.Collections": "4.3.0",
+          "System.Collections.Concurrent": "4.3.0",
+          "System.Collections.Specialized": "4.3.0",
+          "System.ComponentModel.TypeConverter": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Dynamic.Runtime": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
+          "System.Linq.Queryable": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/3.0.1": {
+        "dependencies": {
+          "AutoMapper": "6.1.1",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0",
+          "Microsoft.Extensions.DependencyModel": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
+      "FluentValidation/7.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.0/FluentValidation.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.0/FluentValidation.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -2510,7 +2567,7 @@
           "System.Diagnostics.Debug": "4.3.0",
           "System.Linq": "4.3.0",
           "System.Linq.Expressions": "4.3.0",
-          "System.Linq.Queryable": "4.0.1",
+          "System.Linq.Queryable": "4.3.0",
           "System.ObjectModel": "4.3.0",
           "System.Reflection": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
@@ -3246,7 +3303,7 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Linq.Queryable/4.0.1": {
+      "System.Linq.Queryable/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
@@ -4055,6 +4112,88 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "Events.IO.Application/1.0.0": {
+        "dependencies": {
+          "Events.IO.Domain": "1.0.0",
+          "Events.IO.Domain.Core": "1.0.0",
+          "System.ComponentModel.Annotations": "4.4.0",
+          "AutoMapper": "6.1.1"
+        },
+        "runtime": {
+          "Events.IO.Application.dll": {}
+        },
+        "compile": {
+          "Events.IO.Application.dll": {}
+        }
+      },
+      "Events.IO.Domain/1.0.0": {
+        "dependencies": {
+          "Events.IO.Domain.Core": "1.0.0",
+          "FluentValidation": "7.1.1"
+        },
+        "runtime": {
+          "Events.IO.Domain.dll": {}
+        },
+        "compile": {
+          "Events.IO.Domain.dll": {}
+        }
+      },
+      "Events.IO.Domain.Core/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "7.1.1"
+        },
+        "runtime": {
+          "Events.IO.Domain.Core.dll": {}
+        },
+        "compile": {
+          "Events.IO.Domain.Core.dll": {}
+        }
+      },
+      "Events.IO.Infra.CrossCutting.Bus/1.0.0": {
+        "dependencies": {
+          "Events.IO.Domain.Core": "1.0.0"
+        },
+        "runtime": {
+          "Events.IO.Infra.CrossCutting.Bus.dll": {}
+        },
+        "compile": {
+          "Events.IO.Infra.CrossCutting.Bus.dll": {}
+        }
+      },
+      "Events.IO.Infra.CrossCutting.IoC/1.0.0": {
+        "dependencies": {
+          "Events.IO.Application": "1.0.0",
+          "Events.IO.Domain": "1.0.0",
+          "Events.IO.Infra.CrossCutting.Bus": "1.0.0",
+          "Events.IO.Infra.Data": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "runtime": {
+          "Events.IO.Infra.CrossCutting.IoC.dll": {}
+        },
+        "compile": {
+          "Events.IO.Infra.CrossCutting.IoC.dll": {}
+        }
+      },
+      "Events.IO.Infra.Data/1.0.0": {
+        "dependencies": {
+          "Events.IO.Domain": "1.0.0",
+          "Events.IO.Domain.Core": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "2.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
+          "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
+          "Microsoft.Extensions.Configuration": "2.0.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "2.0.0",
+          "Microsoft.Extensions.Configuration.Json": "2.0.0"
+        },
+        "runtime": {
+          "Events.IO.Infra.Data.dll": {}
+        },
+        "compile": {
+          "Events.IO.Infra.Data.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -4238,6 +4377,27 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/6.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A+6PAblvzmkXPS20nFBQJvlNSW5oEdyfN5+cxT/Du35fTNyuP5pNDXT64KT/jBgxt7CPduOM0Y7oLnNe0E5IXg==",
+      "path": "automapper/6.1.1",
+      "hashPath": "automapper.6.1.1.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i3IAYqWdE2UbqsmiiXE2L3khtKwkr+J8mT0zvUaiFUg72zC6BgLBo3dFvU5krq7QKBSsKVQ0NTCl/NmDoC0Hng==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/3.0.1",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.3.0.1.nupkg.sha512"
+    },
+    "FluentValidation/7.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+EOmm3XjvgSuPWqVDqCT807cPwerhJTK2qNi2+CfCvbSn5Jq4+3aRcB6buUJeeOwRLJxFAvYpTZyJTx6w6RAoQ==",
+      "path": "fluentvalidation/7.1.1",
+      "hashPath": "fluentvalidation.7.1.1.nupkg.sha512"
     },
     "Libuv/1.10.0": {
       "type": "package",
@@ -5940,12 +6100,12 @@
       "path": "system.linq.parallel/4.3.0",
       "hashPath": "system.linq.parallel.4.3.0.nupkg.sha512"
     },
-    "System.Linq.Queryable/4.0.1": {
+    "System.Linq.Queryable/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lo3q1NEgrTjkmddkDg1cjNCKOeNUs6Z/trZs4ahud3CfVTUD7TmhXV2terC7lbTaE7BWyC5Ys4mslJXtqFmCtw==",
-      "path": "system.linq.queryable/4.0.1",
-      "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
+      "sha512": "sha512-LkEbsGLATcY2H+AOyPJHBdqualAdYke0wao/kSDIG6RzSxj7K5EjHfNpszNLV2h1zKwP+47n1Q62p6CZpluOBw==",
+      "path": "system.linq.queryable/4.3.0",
+      "hashPath": "system.linq.queryable.4.3.0.nupkg.sha512"
     },
     "System.Net.Http/4.3.0": {
       "type": "package",
@@ -6366,6 +6526,36 @@
       "sha512": "sha512-W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
+    },
+    "Events.IO.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Events.IO.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Events.IO.Domain.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Events.IO.Infra.CrossCutting.Bus/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Events.IO.Infra.CrossCutting.IoC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Events.IO.Infra.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.NETCore.App/2.0.0": {
       "type": "package",

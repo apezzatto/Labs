@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Events.IO.WebSite.Models;
+using Events.IO.Application.ViewModels;
 
 namespace Events.IO.WebSite.Data
 {
