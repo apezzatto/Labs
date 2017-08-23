@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using AutoMapper;
+﻿using AutoMapper;
 
 namespace Events.IO.Application.AutoMapper
 {
-    public partial class AutoMapperConfiguration
+    public class AutoMapperConfiguration
     {
         public static MapperConfiguration RegisterMappings()
         {

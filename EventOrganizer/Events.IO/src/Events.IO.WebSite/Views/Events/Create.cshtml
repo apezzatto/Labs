@@ -1,4 +1,7 @@
-﻿@model Events.IO.Application.ViewModels.EventViewModel
+﻿@using System.Collections.Generic
+@using Events.IO.Application.ViewModels
+@using Microsoft.AspNetCore.Mvc.Rendering
+@model Events.IO.Application.ViewModels.EventViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -24,8 +27,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="LongDescription" class="control-label"></label>
-                <input asp-for="LongDescription" class="form-control" />
+                <textarea rows="5" asp-for="LongDescription" class="form-control" ></textarea>
                 <span asp-validation-for="LongDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Category" class="control-label"></label>
+                @Html.Partial("_Categories")
+                <span asp-validation-for="Category" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="StartDate" class="control-label"></label>
@@ -39,8 +47,8 @@
             </div>
             <div class="form-group">
                 <div class="checkbox">
-                    <label>
-                        <input asp-for="IsFree" /> @Html.DisplayNameFor(model => model.IsFree)
+                    <label asp-for="IsFree" class="control-label">
+                        <input asp-for="IsFree" /> @{Html.DisplayNameFor<bool>(model => model.IsFree);} <strong>Free Event</strong>
                     </label>
                 </div>
             </div>
@@ -51,8 +59,8 @@
             </div>
             <div class="form-group">
                 <div class="checkbox">
-                    <label>
-                        <input asp-for="Online" /> @Html.DisplayNameFor(model => model.Online)
+                    <label asp-for="Online" class="control-label">
+                        <input asp-for="Online" /> @{Html.DisplayNameFor<bool>(model => model.Online);} <strong>Online</strong>
                     </label>
                 </div>
             </div>
@@ -60,16 +68,6 @@
                 <label asp-for="CompanyName" class="control-label"></label>
                 <input asp-for="CompanyName" class="form-control" />
                 <span asp-validation-for="CompanyName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdCategory" class="control-label"></label>
-                <input asp-for="IdCategory" class="form-control" />
-                <span asp-validation-for="IdCategory" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdOrganizer" class="control-label"></label>
-                <input asp-for="IdOrganizer" class="form-control" />
-                <span asp-validation-for="IdOrganizer" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />

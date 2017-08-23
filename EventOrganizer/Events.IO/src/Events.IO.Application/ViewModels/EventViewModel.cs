@@ -40,6 +40,7 @@ namespace Events.IO.Application.ViewModels
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal Price { get; set; }
 
+        [Display(Name = "Online")]
         public bool Online { get; set; }
 
         [Display(Name = "Company / Organizer group name")]

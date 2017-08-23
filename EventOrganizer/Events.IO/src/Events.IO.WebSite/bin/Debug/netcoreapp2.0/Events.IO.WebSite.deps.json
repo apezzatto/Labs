@@ -4116,6 +4116,7 @@
         "dependencies": {
           "Events.IO.Domain": "1.0.0",
           "Events.IO.Domain.Core": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.0.0",
           "System.ComponentModel.Annotations": "4.4.0",
           "AutoMapper": "6.1.1"
         },
@@ -4166,6 +4167,7 @@
           "Events.IO.Domain": "1.0.0",
           "Events.IO.Infra.CrossCutting.Bus": "1.0.0",
           "Events.IO.Infra.Data": "1.0.0",
+          "Microsoft.AspNetCore": "2.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
         },
         "runtime": {

@@ -4,16 +4,13 @@ using Events.IO.Domain.Events;
 
 namespace Events.IO.Application.AutoMapper
 {
-    public partial class AutoMapperConfiguration
+    public class DomainToViewModelMappingProfile : Profile
     {
-        public class DomainToViewModelMappingProfile : Profile
+        public DomainToViewModelMappingProfile()
         {
-            public DomainToViewModelMappingProfile()
-            {
-                CreateMap<Event, EventViewModel>();
-                CreateMap<Address, AddressViewModel>();
-                CreateMap<Category, CategoryViewModel>();
-            }
+            CreateMap<Event, EventViewModel>();
+            CreateMap<Address, AddressViewModel>();
+            CreateMap<Category, CategoryViewModel>();
         }
     }
 }

@@ -13,6 +13,7 @@ using Events.IO.Infra.CrossCutting.Bus;
 using Events.IO.Infra.Data.Context;
 using Events.IO.Infra.Data.Repository;
 using Events.IO.Infra.Data.UoW;
+using Microsoft.AspNetCore.Http;
 
 namespace Events.IO.Infra.CrossCutting.IoC
 {
@@ -20,10 +21,12 @@ namespace Events.IO.Infra.CrossCutting.IoC
     {
         public static void RegisterServices(IServiceCollection services)
         {
+            // ASPNET
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             //Applications
             services.AddSingleton(Mapper.Configuration);
-            services.AddScoped<IMapper>(
-                sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService)); //AutoMapper specific configuration
+            services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService)); //AutoMapper specific configuration
             services.AddScoped<IEventAppService, EventAppService>();
 
             //Domain - Commands
