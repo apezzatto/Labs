@@ -11,26 +11,26 @@ namespace Events.IO.Application.ViewModels
         [Key]
         public Guid Id { get; set; }
 
-        [Display(Name = "Event name")]
+        [Display(Name = "Name")]
         [Required(ErrorMessage = "Name is required")]
         [MinLength(2, ErrorMessage = "Minimum character required: {1}")]
         [MaxLength(150, ErrorMessage = "Maximum character required: {1}")]
         public string Name { get; set; }
 
-        [Display(Name = "Event short description")]
+        [Display(Name = "Short Description")]
         public string ShortDescription { get; set; }
 
-        [Display(Name = "Event long description")]
+        [Display(Name = "Long Description")]
         public string LongDescription { get; set; }
 
-        [Display(Name = "Event start date")]
+        [Display(Name = "Start Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime StartDate { get; set; }
 
-        [Display(Name = "Event end date")]
+        [Display(Name = "End Date")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime EndDate { get; set; }
 
         [Display(Name = "Free")]
@@ -43,13 +43,13 @@ namespace Events.IO.Application.ViewModels
         [Display(Name = "Online")]
         public bool Online { get; set; }
 
-        [Display(Name = "Company / Organizer group name")]
+        [Display(Name = "Organizer")]
         public string CompanyName { get; set; }
 
         public AddressViewModel Address { get; set; }
         public CategoryViewModel Category { get; set; }
-        public Guid IdCategory { get; set; }
-        public Guid IdOrganizer { get; set; }
+        public Guid CategoryId { get; set; }
+        public Guid OrganizerId { get; set; }
 
         public EventViewModel()
         {

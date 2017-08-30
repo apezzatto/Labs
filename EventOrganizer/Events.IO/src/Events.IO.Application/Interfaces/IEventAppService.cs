@@ -9,7 +9,7 @@ namespace Events.IO.Application.Interfaces
     {
         void Register(EventViewModel eventViewModel);
         IEnumerable<EventViewModel> GetAll();
-        IEnumerable<EventViewModel> GetEventByOrganizer(Guid idOrganizer);
+        IEnumerable<EventViewModel> GetEventByOrganizer(Guid organizerId);
         EventViewModel GetById(Guid id);
         void Update(EventViewModel eventViewModel);
         void Delete(Guid id);

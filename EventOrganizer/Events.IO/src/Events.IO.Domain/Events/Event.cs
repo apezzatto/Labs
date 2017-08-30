@@ -48,8 +48,10 @@ namespace Events.IO.Domain.Events
             Excluded = true;
         }
 
-        public Event(
+        internal Event(
             string name,
+            string shortDescription,
+            string longDescription,
             DateTime startDate,
             DateTime endDate,
             bool isFree,
@@ -59,6 +61,8 @@ namespace Events.IO.Domain.Events
         {
             Id = Guid.NewGuid();
             Name = name;
+            ShortDescription = shortDescription;
+            LongDescription = longDescription;
             StartDate = startDate;
             EndDate = endDate;
             IsFree = isFree;
@@ -156,12 +160,14 @@ namespace Events.IO.Domain.Events
         public static class EventFactory
         {
 
-            public static Event NewFullEvent(Guid id, string name,DateTime startDate,DateTime endDate,bool isFree,decimal price,bool online,string companyName, Guid? organizerId, Address address, Guid categoryId)
+            public static Event NewFullEvent(Guid id, string name, string shortDescription, string longDescription, DateTime startDate,DateTime endDate,bool isFree,decimal price,bool online,string companyName, Guid? organizerId, Address address, Guid categoryId)
             {
                 var @event = new Event()
                 {
                     Id = id,
                     Name = name,
+                    ShortDescription = shortDescription,
+                    LongDescription = longDescription,
                     StartDate = startDate,
                     EndDate = endDate,
                     IsFree = isFree,

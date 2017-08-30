@@ -35,15 +35,17 @@ namespace Events.IO.Domain.Events.Commands
             var @event = Event.EventFactory.NewFullEvent(
                 message.Id, 
                 message.Name,
+                message.ShortDescription,
+                message.LongDescription,
                 message.StartDate,
                 message.EndDate,
                 message.IsFree,
                 message.Price,
                 message.Online,
                 message.CompanyName,
-                message.IdOrganizer,
+                message.OrganizerId,
                 address,
-                message.IdCategory);
+                message.CategoryId);
 
             if (!IsValidEvent(@event)) return;
 
@@ -80,7 +82,7 @@ namespace Events.IO.Domain.Events.Commands
 
             var currentEvent = _eventRepository.GetById(message.Id);
 
-            var @event = Event.EventFactory.NewFullEvent(message.Id, message.Name, message.StartDate, message.EndDate, message.IsFree, message.Price, message.Online, message.CompanyName, message.IdOrganizer, currentEvent.Address, message.IdCategory);
+            var @event = Event.EventFactory.NewFullEvent(message.Id, message.Name, message.ShortDescription, message.LongDescription, message.StartDate, message.EndDate, message.IsFree, message.Price, message.Online, message.CompanyName, message.OrganizerId, currentEvent.Address, message.CategoryId);
 
             if (!IsValidEvent(@event)) return;
 

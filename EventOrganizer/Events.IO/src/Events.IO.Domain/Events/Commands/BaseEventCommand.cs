@@ -17,7 +17,7 @@ namespace Events.IO.Domain.Events.Commands
         public decimal Price { get; protected set; }
         public bool Online { get; protected set; }
         public string CompanyName { get; protected set; }
-        public Guid IdOrganizer { get; protected set; }
-        public Guid IdCategory { get; protected set; }
+        public Guid OrganizerId { get; protected set; }
+        public Guid CategoryId { get; protected set; }
     }
 }

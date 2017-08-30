@@ -52,9 +52,9 @@ namespace Events.IO.Application.Services
             return _mapper.Map<EventViewModel>(_eventRepository.GetById(id));
         }
 
-        public IEnumerable<EventViewModel> GetEventByOrganizer(Guid idOrganizer)
+        public IEnumerable<EventViewModel> GetEventByOrganizer(Guid organizerId)
         {
-            return _mapper.Map<IEnumerable<EventViewModel>>(_eventRepository.GetEventByOrganizer(idOrganizer));
+            return _mapper.Map<IEnumerable<EventViewModel>>(_eventRepository.GetEventByOrganizer(organizerId));
         }
 
         public void Dispose()

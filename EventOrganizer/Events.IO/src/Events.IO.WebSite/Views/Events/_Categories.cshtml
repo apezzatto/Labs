@@ -3,5 +3,5 @@
 @{ 
     var categories = (IEnumerable<SelectListItem>)new CategoryViewModel().Categories();
 }
-<select asp-for="IdCategory" asp-items="@categories" class="form-control"></select>
+<select asp-for="CategoryId" asp-items="@categories" class="form-control"></select>
 

@@ -7,7 +7,7 @@ namespace Events.IO.Domain.Events.Repository
 {
     public interface IEventRepository : IRepository<Event>
     {
-        IEnumerable<Event> GetEventByOrganizer(Guid idOrganizer);
+        IEnumerable<Event> GetEventByOrganizer(Guid organizerId);
         Address GetAddressById(Guid id);
         void AddAddress(Address address);
         void UpdateAddress(Address address);

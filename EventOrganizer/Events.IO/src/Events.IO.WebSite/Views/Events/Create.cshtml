@@ -4,17 +4,18 @@
 @model Events.IO.Application.ViewModels.EventViewModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "New Event Registration";
 }
 
-<h2>Create</h2>
+<h2>@ViewData["Title"]</h2>
 
-<h4>EventViewModel</h4>
+<h4>Fill all the fields up accordingly</h4>
 <hr />
 <div class="row">
+    <vc:summary />
     <div class="col-md-4">
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -70,14 +71,11 @@
                 <span asp-validation-for="CompanyName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Resgister" class="btn btn-success" />
+                <a asp-action="Index" class="btn btn-info">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
