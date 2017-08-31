@@ -78,6 +78,36 @@
     </div>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+@section Scripts 
+    {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+        @{ if (ViewBag.OperationResult != null)
+            {
+
+                var notification = ViewBag.OperationResult.ToString().Split(",");
+                <script>
+        
+                    toastr.options = {
+                        "closeButton": false,
+                        "debug": true,
+                        "newestOnTop": false,
+                        "progressBar": true,
+                        "positionClass": "toast-top-right",
+                        "preventDuplicates": true,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    }
+
+                    toastr["@notification[0]"]("@notification[1]");
+                </script>
+                }
+            }
+        }

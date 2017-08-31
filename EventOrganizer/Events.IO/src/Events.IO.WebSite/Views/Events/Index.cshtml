@@ -48,10 +48,10 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
+                @item.StartDate.ToString("dd/MM/yyyy")
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
+                @item.EndDate.ToString("dd/MM/yyyy")
             </td>
             <td>
                 @{

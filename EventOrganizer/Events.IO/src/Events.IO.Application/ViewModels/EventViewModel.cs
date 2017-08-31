@@ -24,19 +24,18 @@ namespace Events.IO.Application.ViewModels
         public string LongDescription { get; set; }
 
         [Display(Name = "Start Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Date required")]
         public DateTime StartDate { get; set; }
 
         [Display(Name = "End Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Date required")]
         public DateTime EndDate { get; set; }
 
         [Display(Name = "Free")]
         public bool IsFree { get; set; }
 
         [Display(Name = "Price")]
+        [DataType(DataType.Currency, ErrorMessage = "Invalid currency format")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal Price { get; set; }
 
