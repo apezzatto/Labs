@@ -25,10 +25,14 @@ namespace Events.IO.Application.ViewModels
 
         [Display(Name = "Start Date")]
         [Required(ErrorMessage = "Date required")]
+        //[DataType(DataType.Date, ErrorMessage ="Invalid date format")]
+        //[DisplayFormat(DataFormatString ="{0:dd/MM/yyyy}")]
         public DateTime StartDate { get; set; }
 
         [Display(Name = "End Date")]
         [Required(ErrorMessage = "Date required")]
+        //[DataType(DataType.Date, ErrorMessage = "Invalid date format")]
+        //[DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime EndDate { get; set; }
 
         [Display(Name = "Free")]

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Events.IO.Application.ViewModels;
 using Events.IO.Domain.Events;
+using Events.IO.Domain.Organizers;
 
 namespace Events.IO.Application.AutoMapper
 {
@@ -11,6 +12,7 @@ namespace Events.IO.Application.AutoMapper
             CreateMap<Event, EventViewModel>();
             CreateMap<Address, AddressViewModel>();
             CreateMap<Category, CategoryViewModel>();
+            CreateMap<Organizer, OrganizerViewModel>();
         }
     }
 }

@@ -13,28 +13,35 @@ using Microsoft.Extensions.Options;
 using Events.IO.WebSite.Models;
 using Events.IO.WebSite.Models.AccountViewModels;
 using Events.IO.WebSite.Services;
+using Events.IO.Domain.Core.Notifications;
+using Events.IO.Application.Interfaces;
+using Events.IO.Application.ViewModels;
 
 namespace Events.IO.WebSite.Controllers
 {
     [Authorize]
     [Route("[controller]/[action]")]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
+        private readonly IOrganizerAppService _organizerAppService;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            IDomainNotificationHandler<DomainNotification> notifications,
+            IOrganizerAppService organizerAppService) : base(notifications)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _logger = logger;
+            _organizerAppService = organizerAppService;
         }
 
         [TempData]
@@ -224,6 +231,22 @@ namespace Events.IO.WebSite.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var organizer = new OrganizerViewModel
+                    {
+                        Id = Guid.Parse(user.Id),
+                        SIN = model.SIN,
+                        Name = model.Name,
+                        Email = user.Email
+                    };
+
+                    _organizerAppService.Register(organizer);
+
+                    if (!ValidOperation())
+                    {
+                        await _userManager.DeleteAsync(user);
+                        return View(model);
+                    }
+
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);

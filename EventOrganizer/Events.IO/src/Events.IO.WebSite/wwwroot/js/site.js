@@ -1,14 +1,14 @@
-﻿function EventValidation() {
-    $('StartDate').datepicker({
+﻿function DatePicker() {
+    $('#StartDate').datepicker({
         format: "dd/MM/yyyy",
         startDate: "today",
         orientation: "botton right",
         autoclose: true
     });
 
-    $('EndDate').datepicker({
+    $('#EndDate').datepicker({
         format: "dd/MM/yyyy",
-        startDate: "today",
+        startDate: "tomorrow",
         orientation: "botton right",
         autoclose: true
     });

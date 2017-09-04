@@ -9,6 +9,8 @@
 
 <h2>@ViewData["Title"]</h2>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker3.min.css" rel="stylesheet" />
+
 <h4>Fill all the fields up accordingly</h4>
 <hr />
 <div class="row">
@@ -38,12 +40,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
+                <input asp-for="StartDate" type="text" class="form-control" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" />
+                <input asp-for="EndDate" type="text" class="form-control" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -81,6 +83,12 @@
 @section Scripts 
     {
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+
+        <script>
+            DatePicker();
+        </script>
     
         @{ if (ViewBag.OperationResult != null)
             {

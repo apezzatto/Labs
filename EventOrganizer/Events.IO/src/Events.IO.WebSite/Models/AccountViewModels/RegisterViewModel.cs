@@ -8,9 +8,15 @@ namespace Events.IO.WebSite.Models.AccountViewModels
 {
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
+        [StringLength(9)]
+        [Required(ErrorMessage = "SIN is required")]
+        public string SIN { get; set; }
+
+        [Required(ErrorMessage = "Name is required")]
+        public string Name { get; set; }
+
+        [EmailAddress(ErrorMessage = "Invalid Email format")]
+        [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
 
         [Required]

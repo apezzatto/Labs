@@ -2,6 +2,7 @@
 using Events.IO.Application.ViewModels;
 using Events.IO.Domain.Events.Commands;
 using System;
+using Events.IO.Domain.Organizers.Commands;
 
 namespace Events.IO.Application.AutoMapper
 {
@@ -21,6 +22,9 @@ namespace Events.IO.Application.AutoMapper
 
             CreateMap<EventViewModel, EventDeleteCommand>()
                 .ConstructUsing(c => new EventDeleteCommand(c.Id));
+
+            CreateMap<OrganizerViewModel, OrganizerRegistrationCommand>()
+                .ConstructUsing(c => new OrganizerRegistrationCommand(c.Id, c.SIN, c.Name, c.Email));
         }
     }
 }
