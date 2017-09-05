@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Events.IO.WebSite.Services;
+using Events.IO.Infra.CrossCutting.Identity.Services;
 
 namespace Events.IO.WebSite.Services
 {

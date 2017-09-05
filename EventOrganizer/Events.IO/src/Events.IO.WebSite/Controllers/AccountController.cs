@@ -10,11 +10,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Events.IO.WebSite.Models;
-using Events.IO.WebSite.Models.AccountViewModels;
 using Events.IO.WebSite.Services;
 using Events.IO.Domain.Core.Notifications;
+using Events.IO.Infra.CrossCutting.Identity.Models;
+using Events.IO.Infra.CrossCutting.Identity.Services;
 using Events.IO.Application.Interfaces;
+using Events.IO.Domain.Interfaces;
+using Events.IO.Infra.CrossCutting.Identity.Models.AccountViewModels;
 using Events.IO.Application.ViewModels;
 
 namespace Events.IO.WebSite.Controllers
@@ -35,7 +37,8 @@ namespace Events.IO.WebSite.Controllers
             IEmailSender emailSender,
             ILogger<AccountController> logger,
             IDomainNotificationHandler<DomainNotification> notifications,
-            IOrganizerAppService organizerAppService) : base(notifications)
+            IOrganizerAppService organizerAppService,
+            IUser user) : base(notifications, user)
         {
             _userManager = userManager;
             _signInManager = signInManager;

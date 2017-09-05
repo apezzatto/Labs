@@ -13,6 +13,7 @@
     <ProjectReference Include="..\Events.IO.Application\Events.IO.Application.csproj" />
     <ProjectReference Include="..\Events.IO.Domain\Events.IO.Domain.csproj" />
     <ProjectReference Include="..\Events.IO.Infra.CrossCutting.Bus\Events.IO.Infra.CrossCutting.Bus.csproj" />
+    <ProjectReference Include="..\Events.IO.Infra.CrossCutting.Identity\Events.IO.Infra.CrossCutting.Identity.csproj" />
     <ProjectReference Include="..\Events.IO.Infra.Data\Events.IO.Infra.Data.csproj" />
   </ItemGroup>
 

@@ -13,6 +13,8 @@ using Events.IO.Domain.Organizers.Commands;
 using Events.IO.Domain.Organizers.Events;
 using Events.IO.Domain.Organizers.Repository;
 using Events.IO.Infra.CrossCutting.Bus;
+using Events.IO.Infra.CrossCutting.Identity.Models;
+using Events.IO.Infra.CrossCutting.Identity.Services;
 using Events.IO.Infra.Data.Context;
 using Events.IO.Infra.Data.Repository;
 using Events.IO.Infra.Data.UoW;
@@ -26,7 +28,7 @@ namespace Events.IO.Infra.CrossCutting.IoC
         {
             // ASPNET
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
+            
             //Applications
             services.AddSingleton(Mapper.Configuration);
             services.AddScoped<IMapper>(sp => new Mapper(sp.GetRequiredService<IConfigurationProvider>(), sp.GetService)); //AutoMapper specific configuration
@@ -54,6 +56,10 @@ namespace Events.IO.Infra.CrossCutting.IoC
 
             //Infra - Bus
             services.AddScoped<IBus, InMemoryBus>();
+
+            //Infra - Identity
+            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddScoped<IUser, AspNetUser>();
         }
     }
 }

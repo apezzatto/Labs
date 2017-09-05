@@ -1,0 +1,14 @@
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\bin\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.deps.json
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\bin\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\bin\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\bin\Debug\netstandard2.0\Events.IO.Domain.Core.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\bin\Debug\netstandard2.0\Events.IO.Domain.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\bin\Debug\netstandard2.0\Events.IO.Domain.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\bin\Debug\netstandard2.0\Events.IO.Domain.Core.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\obj\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.csprojResolveAssemblyReference.cache
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\obj\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.csproj.CoreCompileInputs.cache
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\obj\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.AssemblyInfoInputs.cache
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\obj\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.AssemblyInfo.cs
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\obj\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\obj\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.Identity\bin\Debug\netstandard2.0\appsettings.json

@@ -26,6 +26,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "3.0.1",
           "Events.IO.Application": "1.0.0",
           "Events.IO.Infra.CrossCutting.Bus": "1.0.0",
+          "Events.IO.Infra.CrossCutting.Identity": "1.0.0",
           "Events.IO.Infra.CrossCutting.IoC": "1.0.0",
           "Events.IO.Infra.Data": "1.0.0",
           "Microsoft.AspNetCore.All": "2.0.0",
@@ -4189,11 +4190,27 @@
           "Events.IO.Infra.CrossCutting.Bus.dll": {}
         }
       },
+      "Events.IO.Infra.CrossCutting.Identity/1.0.0": {
+        "dependencies": {
+          "Events.IO.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.0.0",
+          "Microsoft.AspNetCore.Identity": "2.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.0.0"
+        },
+        "runtime": {
+          "Events.IO.Infra.CrossCutting.Identity.dll": {}
+        },
+        "compile": {
+          "Events.IO.Infra.CrossCutting.Identity.dll": {}
+        }
+      },
       "Events.IO.Infra.CrossCutting.IoC/1.0.0": {
         "dependencies": {
           "Events.IO.Application": "1.0.0",
           "Events.IO.Domain": "1.0.0",
           "Events.IO.Infra.CrossCutting.Bus": "1.0.0",
+          "Events.IO.Infra.CrossCutting.Identity": "1.0.0",
           "Events.IO.Infra.Data": "1.0.0",
           "Microsoft.AspNetCore": "2.0.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
@@ -6581,6 +6598,11 @@
       "sha512": ""
     },
     "Events.IO.Infra.CrossCutting.Bus/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Events.IO.Infra.CrossCutting.Identity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

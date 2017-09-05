@@ -147,7 +147,7 @@ namespace Events.IO.Domain.Events
         private void AddressValidator()
         {
             if (Online) return;
-            if (!Address.IsValid()) return;
+            if (Address.IsValid()) return;
 
             foreach (var error in Address.ValidationResult.Errors)
             {

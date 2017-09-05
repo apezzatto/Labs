@@ -19,7 +19,7 @@ namespace Events.IO.Domain.Events.Commands
             bool online,
             string companyName,
             Guid organizerId,
-            Guid CategoryId,
+            Guid categoryId,
             AddAddressEventCommand address)
         {
             Id = Guid.NewGuid();
@@ -34,7 +34,7 @@ namespace Events.IO.Domain.Events.Commands
             Online = online;
             CompanyName = companyName;
             OrganizerId = organizerId;
-            CategoryId = CategoryId;
+            CategoryId = categoryId;
             Address = address;
         }
     }

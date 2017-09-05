@@ -18,3 +18,5 @@ C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.IoC\bi
 C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.IoC\bin\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Bus.pdb
 C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.IoC\obj\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.IoC.dll
 C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.IoC\obj\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.IoC.pdb
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.IoC\bin\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.dll
+C:\GitRepo\Labs\EventOrganizer\Events.IO\src\Events.IO.Infra.CrossCutting.IoC\bin\Debug\netstandard2.0\Events.IO.Infra.CrossCutting.Identity.pdb

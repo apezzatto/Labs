@@ -5,14 +5,16 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Events.IO.WebSite.Data;
-using Events.IO.WebSite.Models;
 using Events.IO.WebSite.Services;
 using Events.IO.Application.Interfaces;
 using Events.IO.Application.Services;
 using Microsoft.AspNetCore.Http;
 using Events.IO.Infra.CrossCutting.Bus;
 using Events.IO.Infra.CrossCutting.IoC;
+using Events.IO.Domain.Interfaces;
+using Events.IO.Infra.CrossCutting.Identity.Data;
+using Events.IO.Infra.CrossCutting.Identity.Models;
+using Events.IO.Infra.CrossCutting.Identity.Services;
 
 namespace Events.IO.WebSite
 {
@@ -34,9 +36,6 @@ namespace Events.IO.WebSite
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
-            // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
             services.AddAutoMapper();

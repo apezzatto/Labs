@@ -7,6 +7,7 @@ using Events.IO.Domain.Core.AppEvents;
 using Events.IO.Domain.Core.Bus;
 using Events.IO.Domain.Core.Notifications;
 using Events.IO.Domain.Interfaces;
+using Events.IO.Domain.Organizers.Events;
 using Events.IO.Domain.Organizers.Repository;
 
 namespace Events.IO.Domain.Organizers.Commands
@@ -49,7 +50,7 @@ namespace Events.IO.Domain.Organizers.Commands
 
             if (Commit())
             {
-                //_bus.RaiseEvent();
+                _bus.RaiseEvent(new OrganizerRegisteredEvent(organizer.Id, organizer.SIN, organizer.Name, organizer.Email));
             }
         }
     }

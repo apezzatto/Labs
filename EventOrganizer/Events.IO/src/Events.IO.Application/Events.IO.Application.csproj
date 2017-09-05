@@ -15,10 +15,4 @@
     <ProjectReference Include="..\Events.IO.Domain\Events.IO.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures">
-      <HintPath>..\..\..\..\..\..\Users\ApezzattoApezzatto\.nuget\packages\microsoft.aspnetcore.mvc.viewfeatures\1.1.3\lib\netstandard1.6\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

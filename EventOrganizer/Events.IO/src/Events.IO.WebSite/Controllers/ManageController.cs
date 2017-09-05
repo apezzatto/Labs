@@ -10,9 +10,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Events.IO.WebSite.Models;
-using Events.IO.WebSite.Models.ManageViewModels;
 using Events.IO.WebSite.Services;
+using Events.IO.Infra.CrossCutting.Identity.Models.ManageViewModels;
+using Events.IO.Infra.CrossCutting.Identity.Models;
+using Events.IO.Infra.CrossCutting.Identity.Services;
 
 namespace Events.IO.WebSite.Controllers
 {

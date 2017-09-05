@@ -1,4 +1,6 @@
 ﻿@using Events.IO.WebSite.Views.Manage
+@using Microsoft.AspNetCore.Identity
+@using Events.IO.Infra.CrossCutting.Identity.Models
 @inject SignInManager<ApplicationUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
