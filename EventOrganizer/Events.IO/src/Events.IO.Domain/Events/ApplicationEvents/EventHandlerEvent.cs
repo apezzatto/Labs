@@ -8,24 +8,38 @@ namespace Events.IO.Domain.Events.ApplicationEvents
     public class EventHandlerEvent : 
         IHandler<EventRegistrationEvent>,
         IHandler<EventUpdateEvent>,
-        IHandler<EventDeleteEvent>
+        IHandler<EventDeleteEvent>,
+        IHandler<AddressEventAddedEvent>,
+        IHandler<AddressEventUpdatedEvent>
     {
-        public void Handle(EventRegistrationEvent Message)
+        public void Handle(EventRegistrationEvent message)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Event Registration Succeeded");
+            Console.WriteLine("Event registered successfuly");
         }
 
-        public void Handle(EventDeleteEvent Message)
+        public void Handle(EventDeleteEvent message)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Event Deleted Succeeded");
+            Console.WriteLine("Event deleted successfuly");
         }
 
-        public void Handle(EventUpdateEvent Message)
+        public void Handle(EventUpdateEvent message)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Event Updated Succeeded");
+            Console.WriteLine("Event updated successfuly");
+        }
+
+        public void Handle(AddressEventAddedEvent message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Event address added successfuly");
+        }
+
+        public void Handle(AddressEventUpdatedEvent message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Event address updated successfuly");
         }
     }
 }

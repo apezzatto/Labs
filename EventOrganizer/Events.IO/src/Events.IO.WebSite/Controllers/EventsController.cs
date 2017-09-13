@@ -86,9 +86,16 @@ namespace Events.IO.WebSite.Controllers
         {
             if (!ModelState.IsValid) return View(eventViewModel);
 
+            eventViewModel.OrganizerId = OrganizerId;
+
             _eventAppService.Update(eventViewModel);
 
             ViewBag.OperationResult = ValidOperation() ? "success,Event update successfully" : "error,Event update failed. Check messages for details.";
+
+            if (_eventAppService.GetById(eventViewModel.Id).Online)
+                eventViewModel.Address = null;
+            else
+                eventViewModel = _eventAppService.GetById(eventViewModel.Id);
 
             return View(eventViewModel);
         }
@@ -118,6 +125,67 @@ namespace Events.IO.WebSite.Controllers
         {
             _eventAppService.Delete(id);
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult AddAddress(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var eventViewModel = _eventAppService.GetById(id.Value);
+            return PartialView("_AddAddress", eventViewModel);
+        }
+
+        public IActionResult UpdateAddress(Guid? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var eventViewModel = _eventAppService.GetById(id.Value);
+            return PartialView("_UpdateAddress", eventViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddAddress(EventViewModel eventViewModel)
+        {
+            ModelState.Clear();
+            eventViewModel.Address.EventId = eventViewModel.Id;
+
+            _eventAppService.AddAddress(eventViewModel.Address);
+
+            if (ValidOperation())
+            {
+                string url = Url.Action("GetAddress", "Events", new {id = eventViewModel.Id});
+                return Json(new {success = true, url = url});
+            }
+
+            return PartialView("_AddAddress", eventViewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult UpdateAddress(EventViewModel eventViewModel)
+        {
+            ModelState.Clear();
+            _eventAppService.UpdateAddress(eventViewModel.Address);
+
+            if (ValidOperation())
+            {
+                string url = Url.Action("GetAddress", "Events", new { id = eventViewModel.Id });
+                return Json(new { success = true, url = url });
+            }
+
+            return PartialView("_UpdateAddress", eventViewModel);
+        }
+
+        public IActionResult GetAddress(Guid id)
+        {
+            return PartialView("_AddressDetails", _eventAppService.GetById(id));
         }
     }
 }

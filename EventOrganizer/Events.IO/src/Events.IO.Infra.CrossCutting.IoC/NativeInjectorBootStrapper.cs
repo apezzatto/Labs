@@ -39,6 +39,8 @@ namespace Events.IO.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<EventRegistrationCommand>, CommandEventHandler>();
             services.AddScoped<IHandler<EventUpdateCommand>, CommandEventHandler>();
             services.AddScoped<IHandler<EventDeleteCommand>, CommandEventHandler>();
+            services.AddScoped<IHandler<AddAddressEventCommand>, CommandEventHandler>();
+            services.AddScoped<IHandler<UpdateAddressEventCommand>, CommandEventHandler>();
             services.AddScoped<IHandler<OrganizerRegistrationCommand>, OrganizerCommandHandler>();
 
             //Domain - Events
@@ -46,6 +48,8 @@ namespace Events.IO.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<EventRegistrationEvent>, EventHandlerEvent>();
             services.AddScoped<IHandler<EventUpdateEvent>, EventHandlerEvent>();
             services.AddScoped<IHandler<EventDeleteEvent>, EventHandlerEvent>();
+            services.AddScoped<IHandler<AddressEventAddedEvent>, EventHandlerEvent>();
+            services.AddScoped<IHandler<AddressEventUpdatedEvent>, EventHandlerEvent>();
             services.AddScoped<IHandler<OrganizerRegisteredEvent>, OrganizerHandlerEvent>();
 
             //Infra - Data

@@ -1,0 +1,7 @@
+﻿@using Events.IO.Application.ViewModels
+@model EventViewModel
+@{ 
+    var provinces = (IEnumerable<SelectListItem>)new AddressViewModel().Provinces();
+}
+<select asp-for="Address.Province" asp-items="@provinces" class="form-control"></select>
+

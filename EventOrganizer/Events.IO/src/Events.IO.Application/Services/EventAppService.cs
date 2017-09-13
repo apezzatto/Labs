@@ -42,6 +42,23 @@ namespace Events.IO.Application.Services
             _bus.SendCommand(new EventDeleteCommand(id));
         }
 
+        public void AddAddress(AddressViewModel addressViewModel)
+        {
+            var addressCommand = _mapper.Map<AddAddressEventCommand>(addressViewModel);
+            _bus.SendCommand(addressCommand);
+        }
+
+        public void UpdateAddress(AddressViewModel addressViewModel)
+        {
+            var addressCommand = _mapper.Map<UpdateAddressEventCommand>(addressViewModel);
+            _bus.SendCommand(addressCommand);
+        }
+
+        public AddressViewModel GetAddressById(Guid id)
+        {
+            return _mapper.Map<AddressViewModel>(_eventRepository.GetAddressById(id));
+        }
+
         public IEnumerable<EventViewModel> GetAll()
         {
             return _mapper.Map<IEnumerable<EventViewModel>>(_eventRepository.GetAll());

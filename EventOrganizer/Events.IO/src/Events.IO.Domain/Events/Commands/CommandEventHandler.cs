@@ -14,7 +14,9 @@ namespace Events.IO.Domain.Events.Commands
     public class CommandEventHandler : CommandHandler,
         IHandler<EventRegistrationCommand>,
         IHandler<EventUpdateCommand>,
-        IHandler<EventDeleteCommand>
+        IHandler<EventDeleteCommand>,
+        IHandler<AddAddressEventCommand>,
+        IHandler<UpdateAddressEventCommand>
     {
         private readonly IEventRepository _eventRepository;
         private readonly IBus _bus;
@@ -84,6 +86,12 @@ namespace Events.IO.Domain.Events.Commands
 
             var @event = Event.EventFactory.NewFullEvent(message.Id, message.Name, message.ShortDescription, message.LongDescription, message.StartDate, message.EndDate, message.IsFree, message.Price, message.Online, message.CompanyName, message.OrganizerId, currentEvent.Address, message.CategoryId);
 
+            if (!@event.Online && @event.Address == null)
+            {
+                _bus.RaiseEvent(new DomainNotification(message.MessageType, "It is not possible to update an event without an address"));
+                return;
+            }
+
             if (!IsValidEvent(@event)) return;
 
             _eventRepository.Update(@event);
@@ -109,6 +117,42 @@ namespace Events.IO.Domain.Events.Commands
             _bus.RaiseEvent(new DomainNotification(messageType, "Event not found"));
 
             return false;
+        }
+
+        public void Handle(AddAddressEventCommand message)
+        {
+            var address = new Address(message.Id, message.Address1, message.Address2, message.ZipCode, message.City, message.Province, message.EventId.Value);
+
+            if (!address.IsValid())
+            {
+                NotifyValidationError(address.ValidationResult);
+                return;
+            }
+
+            _eventRepository.AddAddress(address);
+
+            if (Commit())
+            {
+                _bus.RaiseEvent(new AddressEventAddedEvent(address.Id, address.Address1, address.Address2, address.ZipCode, address.City, address.Province, address.EventId.Value));
+            }
+        }
+
+        public void Handle(UpdateAddressEventCommand message)
+        {
+            var address = new Address(message.Id, message.Address1, message.Address2, message.ZipCode, message.City, message.Province, message.EventId.Value);
+
+            if (!address.IsValid())
+            {
+                NotifyValidationError(address.ValidationResult);
+                return;
+            }
+
+            _eventRepository.UpdateAddress(address);
+
+            if (Commit())
+            {
+                _bus.RaiseEvent(new AddressEventUpdatedEvent(address.Id, address.Address1, address.Address2, address.ZipCode, address.City, address.Province, address.EventId.Value));
+            }
         }
     }
 }
