@@ -64,6 +64,10 @@
     });
 }
 
+function RedirectToastrCallback() {
+    
+}
+
 function AjaxModal() {
     $(document).ready(function () {
         $(function () {

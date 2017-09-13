@@ -1,11 +1,20 @@
 ﻿@model IEnumerable<Events.IO.Application.ViewModels.EventViewModel>
 
 @{
-    ViewData["Title"] = "Upcoming Events List";
+    ViewData["Title"] = "My Events";
 }
 
 <h2>@ViewData["Title"]</h2>
 
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-left">
+            <a asp-action="Create" class="btn btn-primary">
+                <span title="New Event" class="glyphicon glyphicon-plus-sign"></span> New Event
+            </a>
+        </div>
+    </div>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -56,8 +65,14 @@
                 @Html.DisplayFor(modelItem => item.Online)
             </td>
             <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">
+                    <spam class="glyphicon glyphicon-pencil"></spam>
+                </a>
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">
-                    <spam class="glyphicon glyphicon-search"></spam> Details
+                    <spam class="glyphicon glyphicon-search"></spam>
+                </a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                    <spam class="glyphicon glyphicon-trash"></spam>
                 </a>
             </td>
         </tr>

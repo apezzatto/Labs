@@ -7,6 +7,7 @@ using Events.IO.Application.ViewModels;
 using Events.IO.Domain.Core.Bus;
 using Events.IO.Domain.Events.Commands;
 using Events.IO.Domain.Events.Repository;
+using Events.IO.Domain.Interfaces;
 
 namespace Events.IO.Application.Services
 {
@@ -15,12 +16,14 @@ namespace Events.IO.Application.Services
         private readonly IBus _bus;
         private readonly IMapper _mapper;
         private readonly IEventRepository _eventRepository;
+        private readonly IUser _user;
 
-        public EventAppService(IBus bus, IMapper mapper, IEventRepository eventRepository)
+        public EventAppService(IBus bus, IMapper mapper, IEventRepository eventRepository, IUser user)
         {
             _bus = bus;
             _mapper = mapper;
             _eventRepository = eventRepository;
+            _user = user;
         }
 
         public void Register(EventViewModel eventViewModel)

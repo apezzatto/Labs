@@ -103,7 +103,7 @@
             </div>            
 
             <div class="form-group">
-                <input type="submit" value="Resgister" class="btn btn-success" />
+                <input type="submit" id="btSubmit" value="Resgister" class="btn btn-success" />
                 <a asp-action="Index" class="btn btn-info">Back to List</a>
             </div>
         </form>
@@ -127,6 +127,13 @@
                 <script>
                     toastr["@notification[0]"]("@notification[1]");
                 </script>
+
+                if (@notification[0] == "success")
+                {
+                    <script>
+                        $("#btSubmit").prop("disabled", true);
+                    </script>
                 }
             }
         }
+    }

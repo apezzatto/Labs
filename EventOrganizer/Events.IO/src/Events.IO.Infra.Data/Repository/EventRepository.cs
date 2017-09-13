@@ -85,5 +85,12 @@ namespace Events.IO.Infra.Data.Repository
         {
             Db.Addresses.Update(address);
         }
+
+        public override void Delete(Guid id)
+        {
+            var @event = GetById(id);
+            @event.SetEventExcluded();
+            Update(@event);
+        }
     }
 }

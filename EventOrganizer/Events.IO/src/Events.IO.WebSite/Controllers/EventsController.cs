@@ -24,6 +24,12 @@ namespace Events.IO.WebSite.Controllers
             return View(_eventAppService.GetAll());
         }
 
+        [Authorize]
+        public IActionResult MyEvents()
+        {
+            return View(_eventAppService.GetEventByOrganizer(OrganizerId));
+        }
+
         public IActionResult Details(Guid? id)
         {
             if (id == null)
@@ -73,9 +79,11 @@ namespace Events.IO.WebSite.Controllers
             var eventViewModel = _eventAppService.GetById(id.Value);
 
             if (eventViewModel == null)
-            {
                 return NotFound();
-            }
+
+            if (ValidateEventAuthority(eventViewModel))
+                return RedirectToAction("MyEvents", _eventAppService.GetEventByOrganizer(OrganizerId));
+
             return View(eventViewModel);
         }
 
@@ -84,6 +92,9 @@ namespace Events.IO.WebSite.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(EventViewModel eventViewModel)
         {
+            if (ValidateEventAuthority(eventViewModel))
+                return RedirectToAction("MyEvents", _eventAppService.GetEventByOrganizer(OrganizerId));
+
             if (!ModelState.IsValid) return View(eventViewModel);
 
             eventViewModel.OrganizerId = OrganizerId;
@@ -123,6 +134,9 @@ namespace Events.IO.WebSite.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(Guid id)
         {
+            if (ValidateEventAuthority(_eventAppService.GetById(id)))
+                return RedirectToAction("MyEvents", _eventAppService.GetEventByOrganizer(OrganizerId));
+
             _eventAppService.Delete(id);
             return RedirectToAction(nameof(Index));
         }
@@ -186,6 +200,11 @@ namespace Events.IO.WebSite.Controllers
         public IActionResult GetAddress(Guid id)
         {
             return PartialView("_AddressDetails", _eventAppService.GetById(id));
+        }
+
+        private bool ValidateEventAuthority(EventViewModel eventViewModel)
+        {
+            return (eventViewModel.OrganizerId != OrganizerId);
         }
     }
 }

@@ -20,14 +20,17 @@ namespace Events.IO.Domain.Events.Commands
     {
         private readonly IEventRepository _eventRepository;
         private readonly IBus _bus;
+        private readonly IUser _user;
 
         public CommandEventHandler(IEventRepository eventRepository,
                                    IUnitOfWork uow,
                                    IBus bus,
-                                   IDomainNotificationHandler<DomainNotification> notifications) : base(uow, bus, notifications)
+                                   IDomainNotificationHandler<DomainNotification> notifications,
+                                   IUser user) : base(uow, bus, notifications)
         {
             _eventRepository = eventRepository;
             _bus = bus;
+            _user = user;
         }
 
         public void Handle(EventRegistrationCommand message)
@@ -70,7 +73,17 @@ namespace Events.IO.Domain.Events.Commands
         {
             if (!EventExists(message.Id, message.MessageType)) return;
 
-            _eventRepository.Delete(message.Id);
+            var currentEvent = _eventRepository.GetById(message.Id);
+
+            if (currentEvent.OrganizerId != _user.GetUserId())
+            {
+                _bus.RaiseEvent(new DomainNotification(message.MessageType, "Event does not belong to this organizer."));
+                return;
+            }
+
+            currentEvent.SetEventExcluded();
+
+            _eventRepository.Update(currentEvent);
 
             if (Commit())
                 _bus.RaiseEvent(new EventDeleteEvent(message.Id));
@@ -80,9 +93,13 @@ namespace Events.IO.Domain.Events.Commands
         {
             if (!EventExists(message.Id, message.MessageType)) return;
 
-            //TODO: Validate whether the event belongs to the person who is actually editing it or not.
-
             var currentEvent = _eventRepository.GetById(message.Id);
+
+            if (currentEvent.OrganizerId != _user.GetUserId())
+            {
+                _bus.RaiseEvent(new DomainNotification(message.MessageType, "Event does not belong to this organizer."));
+                return;
+            }
 
             var @event = Event.EventFactory.NewFullEvent(message.Id, message.Name, message.ShortDescription, message.LongDescription, message.StartDate, message.EndDate, message.IsFree, message.Price, message.Online, message.CompanyName, message.OrganizerId, currentEvent.Address, message.CategoryId);
 

@@ -42,7 +42,7 @@ namespace Events.IO.Domain.Events
             Category = category;
         }
 
-        public void ExcludeEvent()
+        public void SetEventExcluded()
         {
             //TODO: Should validate some additional business rules
             Excluded = true;
